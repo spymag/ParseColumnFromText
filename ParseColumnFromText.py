@@ -108,23 +108,19 @@ for i in range(0,len(flatList)):
 #split again the list to get the two first elements 
 for i in range(0,len(filtered)):
     #print(filtered[i])
-    list1 = filtered[i].split()
-    #print(list1)
-    for i in range(0,1):
-        list2.append(list1[i])
-    
-print list2
-
-#remove duplicates
-noDuplicates = f7(filtered)    
-#print(noDuplicates)
+    list1.append(filtered[i].split()) # list has elements splited by row
+#print(list1)
+    for j in range(0,1):
+    #for j in range(0,1):
+        list2.append(list1[i][:2]) # append the first two item of the row.
+#print list2
 
 #print ReadFileLines(fname)
 with open(ofile, "w") as text_file:
-    for i in range(0,len(noDuplicates)):
-        text_file.write(noDuplicates[i])
+    for i in range(0,len(list2)):
+        text_file.write(' '.join(list2[i])) # join the two items and write them in one line
         text_file.write('\n') # add new line every after line
         locations = os.getcwd() +'/'+ str(ofile)
         
-print(" %s matches found! and copied to %s" % (str(len(noDuplicates)), locations))
+print(" %s outreaches found! and copied to %s" % (str(len(list2)), locations))
 text_file.close()
