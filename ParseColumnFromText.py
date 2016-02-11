@@ -33,6 +33,8 @@ lengths = []
 noBlanks = []
 joinedList = []
 noDuplicates = []
+list1 = []
+list2 = []
 
 def f7(seq):
     seen = set()
@@ -95,6 +97,7 @@ for i in range(0,len(filesNumber)):
 #print(len(joinedList))
 #print(joinedList)
 
+#get only the rows with the numbers(floats)
 for i in range(0,len(flatList)):
     #print(flatList[i])
     if is_number(flatList[i][:5]) == True:
@@ -102,6 +105,15 @@ for i in range(0,len(flatList)):
 
 #print(filtered)
 
+#split again the list to get the two first elements 
+for i in range(0,len(filtered)):
+    #print(filtered[i])
+    list1 = filtered[i].split()
+    #print(list1)
+    for i in range(0,1):
+        list2.append(list1[i])
+    
+print list2
 
 #remove duplicates
 noDuplicates = f7(filtered)    
