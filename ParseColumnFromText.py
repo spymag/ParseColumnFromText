@@ -22,7 +22,7 @@ outreach4 = 0
 outreach5 = 0
 outreach6 = 0
 
-ofile = "Output.txt"
+ofile = "OutputforLC.txt"
 filtered = []
 noSpaces = []
 inputs = []
